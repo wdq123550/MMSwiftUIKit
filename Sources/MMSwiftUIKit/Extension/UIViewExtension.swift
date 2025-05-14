@@ -21,7 +21,7 @@ public struct LayerSet {
     public var shadowOpacity: Float?
     public var shadowRadius: CGFloat?
     public var shadowPath: CGPath?
-    init(cornerRadius: CGFloat? = nil,
+    public init(cornerRadius: CGFloat? = nil,
          borderWidth: CGFloat? = nil,
          borderColor: UIColor? = nil,
          shadowColor: UIColor? = nil,
