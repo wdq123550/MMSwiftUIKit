@@ -19,6 +19,18 @@ open class MMButton: UIButton {
         var bgColor: UIColor?
         var bgImage: UIImage?
         var state: UIControl.State
+        
+        public init(font: UIFont? = nil, title: String? = nil, titleColor: UIColor? = nil, image: UIImage? = nil, imagePosition: NSDirectionalRectEdge? = nil, spacing: CGFloat? = nil, bgColor: UIColor? = nil, bgImage: UIImage? = nil, state: UIControl.State) {
+            self.font = font
+            self.title = title
+            self.titleColor = titleColor
+            self.image = image
+            self.imagePosition = imagePosition
+            self.spacing = spacing
+            self.bgColor = bgColor
+            self.bgImage = bgImage
+            self.state = state
+        }
     }
     
     public override var state: UIControl.State {
