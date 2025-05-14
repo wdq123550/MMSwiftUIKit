@@ -137,4 +137,8 @@ public extension UIView {
         return self
     }
     
+    @discardableResult func superview(_ value: UIView) -> Self {
+        value.addSubview(self)
+        return self
+    }
 }
