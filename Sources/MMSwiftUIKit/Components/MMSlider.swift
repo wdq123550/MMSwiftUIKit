@@ -7,4 +7,4 @@
 
 import UIKit
 
-class MMSlider: UISlider {}
+open class MMSlider: UISlider {}

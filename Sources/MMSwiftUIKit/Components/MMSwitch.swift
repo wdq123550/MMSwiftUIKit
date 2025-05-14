@@ -7,4 +7,4 @@
 
 import UIKit
 
-class MMSwitch: UISwitch {}
+open class MMSwitch: UISwitch {}

@@ -7,4 +7,4 @@
 
 import UIKit
 
-class MMTextView: UITextView {}
+open class MMTextView: UITextView {}

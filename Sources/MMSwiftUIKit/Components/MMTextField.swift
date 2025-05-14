@@ -7,4 +7,4 @@
 
 import UIKit
 
-class MMTextField: UITextField {}
+open class MMTextField: UITextField {}

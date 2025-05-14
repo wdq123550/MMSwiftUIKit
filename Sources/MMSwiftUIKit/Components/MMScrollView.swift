@@ -7,4 +7,4 @@
 
 import UIKit
 
-class MMScrollView: UIScrollView {}
+open class MMScrollView: UIScrollView {}

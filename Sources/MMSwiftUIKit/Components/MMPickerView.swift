@@ -7,4 +7,4 @@
 
 import UIKit
 
-class MMPickerView: UIPickerView {}
+open class MMPickerView: UIPickerView {}
