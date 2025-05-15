@@ -9,37 +9,6 @@ import Foundation
 import UIKit
 import SnapKit
 
-public typealias viewClosure = (() -> UIView)
-public typealias viewsClosure = (() -> [UIView])
-
-public struct LayerSet {
-    public var cornerRadius: CGFloat?
-    public var borderWidth: CGFloat?
-    public var borderColor: UIColor?
-    public var shadowColor: UIColor?
-    public var shadowOffset: CGSize?
-    public var shadowOpacity: Float?
-    public var shadowRadius: CGFloat?
-    public var shadowPath: CGPath?
-    public init(cornerRadius: CGFloat? = nil,
-         borderWidth: CGFloat? = nil,
-         borderColor: UIColor? = nil,
-         shadowColor: UIColor? = nil,
-         shadowOffset: CGSize? = nil,
-         shadowOpacity: Float? = nil,
-         shadowRadius: CGFloat? = nil,
-         shadowPath: CGPath? = nil) {
-        self.cornerRadius = cornerRadius
-        self.borderWidth = borderWidth
-        self.borderColor = borderColor
-        self.shadowColor = shadowColor
-        self.shadowOffset = shadowOffset
-        self.shadowOpacity = shadowOpacity
-        self.shadowRadius = shadowRadius
-        self.shadowPath = shadowPath
-    }
-}
-
 public extension UIView {
     
     @discardableResult func isUserInteractionEnabled(_ value: Bool) -> Self {
@@ -140,5 +109,46 @@ public extension UIView {
     @discardableResult func superview(_ value: UIView) -> Self {
         value.addSubview(self)
         return self
+    }
+    
+    @discardableResult func setGradientBackground(colors: [UIColor], direction: MMGradientDirection) -> Self {
+        // 确保视图有有效布局
+        if self.bounds.size == .zero {
+            self.setNeedsLayout()
+            self.layoutIfNeeded()
+        }
+        
+        // 移除已有渐变
+        self.removeGradientLayer()
+        
+        // 配置渐变层
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = colors.map { $0.cgColor }
+        gradientLayer.frame = self.bounds
+        
+        // 设置渐变方向
+        switch direction {
+        case .vertical:
+            gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.0)
+            gradientLayer.endPoint = CGPoint(x: 0.5, y: 1.0)
+        case .horizontal:
+            gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.5)
+            gradientLayer.endPoint = CGPoint(x: 1.0, y: 0.5)
+        case .topLeftToBottomRight:    // 新增对角线方向
+            gradientLayer.startPoint = CGPoint(x: 0, y: 0)
+            gradientLayer.endPoint = CGPoint(x: 1, y: 1)
+        case .topRightToBottomLeft:    // 新增对角线方向
+            gradientLayer.startPoint = CGPoint(x: 1, y: 0)
+            gradientLayer.endPoint = CGPoint(x: 0, y: 1)
+        }
+        
+        // 添加渐变层
+        self.layer.insertSublayer(gradientLayer, at: 0)
+        
+        return self
+    }
+
+    private func removeGradientLayer() {
+        self.layer.sublayers?.filter { $0 is CAGradientLayer }.forEach { $0.removeFromSuperlayer() }
     }
 }
