@@ -10,11 +10,13 @@ let package = Package(
         .library(name: "MMSwiftUIKit", targets: ["MMSwiftUIKit"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/SnapKit/SnapKit", .upToNextMajor(from: "5.7.1"))
+        .package(url: "https://github.com/SnapKit/SnapKit", .upToNextMajor(from: "5.7.1")),
+        .package(url: "https://github.com/CoderMJLee/MJRefresh", .upToNextMajor(from: "3.7.9"))
     ],
     targets: [
         .target(name: "MMSwiftUIKit", dependencies: [
-            .product(name: "SnapKit", package: "SnapKit")
+            .product(name: "SnapKit", package: "SnapKit"),
+            .product(name: "MJRefresh", package: "MJRefresh"),
         ]),
         .testTarget(name: "MMSwiftUIKitTests", dependencies: ["MMSwiftUIKit"]),
     ]
