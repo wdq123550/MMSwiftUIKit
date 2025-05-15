@@ -6,5 +6,24 @@
 //
 
 import UIKit
+import RSKGrowingTextView
+import Combine
 
-open class MMTextView: UITextView {}
+open class MMTextView: RSKGrowingTextView {
+    
+    public var cancellabel = Set<AnyCancellable>()
+    
+    public let textSubject: PassthroughSubject<String, Never> = PassthroughSubject<String, Never>()
+    
+    public override init(frame: CGRect, textContainer: NSTextContainer?) {
+        super.init(frame: frame, textContainer: textContainer)
+        
+        self.publisher(for: \.text).sink { [unowned self] string in
+            self.textSubject.send(string ?? "")
+        }.store(in: &cancellabel)
+    }
+    
+    @MainActor required public init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}

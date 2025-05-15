@@ -11,12 +11,14 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/SnapKit/SnapKit", .upToNextMajor(from: "5.7.1")),
-        .package(url: "https://github.com/CoderMJLee/MJRefresh", .upToNextMajor(from: "3.7.9"))
+        .package(url: "https://github.com/CoderMJLee/MJRefresh", .upToNextMajor(from: "3.7.9")),
+        .package(url: "https://github.com/ruslanskorb/RSKGrowingTextView", .upToNextMajor(from: "8.0.1")),
     ],
     targets: [
         .target(name: "MMSwiftUIKit", dependencies: [
             .product(name: "SnapKit", package: "SnapKit"),
             .product(name: "MJRefresh", package: "MJRefresh"),
+            .product(name: "RSKGrowingTextView", package: "RSKGrowingTextView"),
         ]),
         .testTarget(name: "MMSwiftUIKitTests", dependencies: ["MMSwiftUIKit"]),
     ]

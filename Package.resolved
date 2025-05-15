@@ -11,6 +11,24 @@
         }
       },
       {
+        "package": "RSKGrowingTextView",
+        "repositoryURL": "https://github.com/ruslanskorb/RSKGrowingTextView",
+        "state": {
+          "branch": null,
+          "revision": "f1ffc902e0ecdd0f66e8d3e7f0b7dbd3461e2dd3",
+          "version": "8.0.1"
+        }
+      },
+      {
+        "package": "RSKPlaceholderTextView",
+        "repositoryURL": "https://github.com/ruslanskorb/RSKPlaceholderTextView.git",
+        "state": {
+          "branch": null,
+          "revision": "fe0f152cb4cf892cd4893fab50a61e502e5ea033",
+          "version": "8.0.1"
+        }
+      },
+      {
         "package": "SnapKit",
         "repositoryURL": "https://github.com/SnapKit/SnapKit",
         "state": {
