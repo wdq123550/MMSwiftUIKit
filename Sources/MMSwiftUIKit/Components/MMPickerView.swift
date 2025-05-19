@@ -7,4 +7,4 @@
 
 import UIKit
 
-open class MMPickerView: UIPickerView {}
+@MainActor open class MMPickerView: UIPickerView {}

@@ -53,14 +53,19 @@ public extension UIView {
     }
     
     @discardableResult func overlays(_ contents: viewsClosure) -> UIView {
-        let views = contents()
-        for view in views {
+        contents().forEach { view in
             self.addSubview(view)
         }
         return self
     }
     
     @discardableResult func makeConstraints(_ closure: (_ make: ConstraintMaker) -> Void) -> Self{
+        self.snp.makeConstraints(closure)
+        return self
+    }
+    
+    @discardableResult func makeConstraints(superview: UIView, _ closure: (_ make: ConstraintMaker) -> Void) -> Self{
+        self.superview(superview)
         self.snp.makeConstraints(closure)
         return self
     }

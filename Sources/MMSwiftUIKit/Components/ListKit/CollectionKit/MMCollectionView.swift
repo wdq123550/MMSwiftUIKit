@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import MJRefresh
 
-public final class MMCollectionView: UICollectionView {
+@MainActor public final class MMCollectionView: UICollectionView {
     
     public init(extensionTarget: AnyObject,
                 layout: UICollectionViewLayout,

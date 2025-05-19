@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import MJRefresh
 
-public final class MMTableView: UITableView {
+@MainActor public final class MMTableView: UITableView {
     
     public init(style: UITableView.Style, extensionTarget: AnyObject){
         self.proxy = MMTableProxy(extensionTarget: extensionTarget)

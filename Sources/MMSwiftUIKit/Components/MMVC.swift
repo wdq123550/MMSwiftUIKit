@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-open class MMVC: UIViewController {
+@MainActor open class MMVC: UIViewController {
     public var cancellabel = Set<AnyCancellable>()
     open var navigationBackImage: UIImage? { UIImage(systemName: "arrowshape.backward.fill") }
     @objc open func navigationBack(animated: Bool = true) { self.navigationController?.popViewController(animated: animated) }

@@ -7,4 +7,4 @@
 
 import UIKit
 
-open class MMDatePicker: UIDatePicker {}
+@MainActor open class MMDatePicker: UIDatePicker {}

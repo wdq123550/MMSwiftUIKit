@@ -7,7 +7,7 @@
 
 import UIKit
 
-open class MMButton: UIButton {
+@MainActor open class MMButton: UIButton {
     
     public struct ButtonItem {
         var font: UIFont?

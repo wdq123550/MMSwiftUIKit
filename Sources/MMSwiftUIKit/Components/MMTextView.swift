@@ -9,7 +9,7 @@ import UIKit
 import RSKGrowingTextView
 import Combine
 
-open class MMTextView: RSKGrowingTextView {
+@MainActor open class MMTextView: RSKGrowingTextView {
     
     public var cancellabel = Set<AnyCancellable>()
     

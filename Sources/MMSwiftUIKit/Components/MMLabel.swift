@@ -7,4 +7,4 @@
 
 import UIKit
 
-open class MMLabel: UILabel {}
+@MainActor open class MMLabel: UILabel {}

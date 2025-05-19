@@ -7,4 +7,4 @@
 
 import UIKit
 
-open class MMSwitch: UISwitch {}
+@MainActor open class MMSwitch: UISwitch {}

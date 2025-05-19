@@ -7,4 +7,4 @@
 
 import UIKit
 
-open class MMSlider: UISlider {}
+@MainActor open class MMSlider: UISlider {}

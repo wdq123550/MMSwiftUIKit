@@ -7,4 +7,4 @@
 
 import UIKit
 
-open class MMImageView: UIImageView {}
+@MainActor open class MMImageView: UIImageView {}

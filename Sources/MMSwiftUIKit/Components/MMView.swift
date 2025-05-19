@@ -9,6 +9,6 @@ import Foundation
 import UIKit
 import Combine
 
-open class MMView: UIView {
+@MainActor open class MMView: UIView {
     public var cancellabel = Set<AnyCancellable>()
 }

@@ -8,6 +8,6 @@
 import UIKit
 import Combine
 
-open class MMTabBarVC: UITabBarController {
+@MainActor open class MMTabBarVC: UITabBarController {
     public var cancellabel = Set<AnyCancellable>()
 }
