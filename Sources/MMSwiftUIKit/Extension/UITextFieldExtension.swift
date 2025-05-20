@@ -139,4 +139,19 @@ public extension UITextField {
         self.interactionState = value
         return self
     }
+    
+    @discardableResult func keyboardType(_ value: UIKeyboardType) -> Self {
+        self.keyboardType = value
+        return self
+    }
+    
+    @discardableResult func returnKeyType(_ value: UIReturnKeyType) -> Self {
+        self.returnKeyType = value
+        return self
+    }
+    
+    @discardableResult func isSecureTextEntry(_ value: Bool) -> Self {
+        self.isSecureTextEntry = value
+        return self
+    }
 }
