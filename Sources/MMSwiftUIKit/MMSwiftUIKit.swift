@@ -17,14 +17,8 @@ public struct LayerSet {
     public var shadowOpacity: Float?
     public var shadowRadius: CGFloat?
     public var shadowPath: CGPath?
-    public init(cornerRadius: CGFloat? = nil,
-         borderWidth: CGFloat? = nil,
-         borderColor: UIColor? = nil,
-         shadowColor: UIColor? = nil,
-         shadowOffset: CGSize? = nil,
-         shadowOpacity: Float? = nil,
-         shadowRadius: CGFloat? = nil,
-         shadowPath: CGPath? = nil) {
+    public var maskedCorners: CACornerMask?
+    public init(cornerRadius: CGFloat? = nil, borderWidth: CGFloat? = nil, borderColor: UIColor? = nil, shadowColor: UIColor? = nil, shadowOffset: CGSize? = nil, shadowOpacity: Float? = nil, shadowRadius: CGFloat? = nil, shadowPath: CGPath? = nil, maskedCorners: CACornerMask? = nil) {
         self.cornerRadius = cornerRadius
         self.borderWidth = borderWidth
         self.borderColor = borderColor
@@ -33,6 +27,7 @@ public struct LayerSet {
         self.shadowOpacity = shadowOpacity
         self.shadowRadius = shadowRadius
         self.shadowPath = shadowPath
+        self.maskedCorners = maskedCorners
     }
 }
 

@@ -113,6 +113,9 @@ public extension UIView {
         self.layer.shadowOpacity = value.shadowOpacity ?? 0
         self.layer.shadowRadius = value.shadowRadius ?? 0
         self.layer.shadowPath = value.shadowPath
+        if let maskedCorners = value.maskedCorners {
+            self.layer.maskedCorners = maskedCorners
+        }
         return self
     }
     
