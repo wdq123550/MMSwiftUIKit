@@ -64,6 +64,11 @@ public extension UIView {
         return self
     }
     
+    @discardableResult func updateConstraints(_ closure: (_ make: ConstraintMaker) -> Void) -> Self{
+        self.snp.updateConstraints(closure)
+        return self
+    }
+    
     @discardableResult func remakeConstraints(_ closure: (_ make: ConstraintMaker) -> Void) -> Self{
         self.snp.remakeConstraints(closure)
         return self
