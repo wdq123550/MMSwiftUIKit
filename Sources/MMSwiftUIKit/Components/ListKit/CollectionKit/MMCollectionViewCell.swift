@@ -39,7 +39,7 @@ open class MMCVCell: UICollectionViewCell, MMCVCellProtocol {
         self._viewModel?.indexPath = indexPath
     }
     
-    open class func cellSize(with cellVM: MMCVCellVMProtocol, indexPath: IndexPath) -> CGSize {
+    @discardableResult open class func cellSize(with cellVM: MMCVCellVMProtocol, indexPath: IndexPath) -> CGSize {
         cellVM.indexPath = indexPath
         return cellVM.cellSize ?? .zero
     }

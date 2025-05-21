@@ -44,7 +44,7 @@ open class MMTVCell: UITableViewCell, MMTVCellProtocol {
         self._viewModel?.indexPath = indexPath
     }
     
-    open class func cellHeight(with cellVM: MMTVCellVMProtocol, indexPath: IndexPath) -> CGFloat {
+    @discardableResult open class func cellHeight(with cellVM: MMTVCellVMProtocol, indexPath: IndexPath) -> CGFloat {
         cellVM.indexPath = indexPath
         return cellVM.cellHeight ?? 0
     }

@@ -17,5 +17,5 @@ public protocol MMTVCellVMProtocol: AnyObject {
 public protocol MMTVCellProtocol: UITableViewCell{
     init(reuserID: String)
     func reset(with cellVM: MMTVCellVMProtocol, indexPath: IndexPath)
-    static func cellHeight(with cellVM: MMTVCellVMProtocol, indexPath: IndexPath) -> CGFloat
+    @discardableResult static func cellHeight(with cellVM: MMTVCellVMProtocol, indexPath: IndexPath) -> CGFloat
 }

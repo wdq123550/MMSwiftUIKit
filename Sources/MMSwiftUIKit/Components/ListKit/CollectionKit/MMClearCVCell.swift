@@ -26,7 +26,7 @@ public final class MMClearCVCell: MMCVCell {
         super.reset(with: cellVM, indexPath: indexPath)
         self.backgroundColor = self.viewModel.bgColor
     }
-    public override class func cellSize(with cellVM: MMCVCellVMProtocol, indexPath: IndexPath) -> CGSize {
+    @discardableResult public override class func cellSize(with cellVM: MMCVCellVMProtocol, indexPath: IndexPath) -> CGSize {
         super.cellSize(with: cellVM, indexPath: indexPath)
     }
     

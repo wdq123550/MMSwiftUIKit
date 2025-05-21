@@ -16,5 +16,5 @@ public protocol MMCVCellVMProtocol: AnyObject {
 
 public protocol MMCVCellProtocol: UICollectionViewCell{
     func reset(with cellVM: MMCVCellVMProtocol, indexPath: IndexPath)
-    static func cellSize(with cellVM: MMCVCellVMProtocol, indexPath: IndexPath) -> CGSize
+    @discardableResult static func cellSize(with cellVM: MMCVCellVMProtocol, indexPath: IndexPath) -> CGSize
 }
