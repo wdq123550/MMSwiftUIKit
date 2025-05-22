@@ -80,19 +80,23 @@ import UIKit
     
     private func applyButtonItem(buttonItem: ButtonItem) {
         var config = UIButton.Configuration.plain()
+        config.attributedTitle = AttributedString.init(.init(string: buttonItem.title ?? "", attributes: [
+            .font: buttonItem.font ?? .systemFont(ofSize: 16),
+            .foregroundColor: buttonItem.titleColor ?? UIColor.white
+        ]))
         config.contentInsets = .zero
-        config.title = buttonItem.title
-        config.baseForegroundColor = buttonItem.titleColor
+//        config.title = buttonItem.title
+//        config.baseForegroundColor = buttonItem.titleColor
         config.image = buttonItem.image
         config.imagePlacement = buttonItem.imagePosition ?? .leading
         config.imagePadding = buttonItem.spacing ?? 0
         config.background.backgroundColor = buttonItem.bgColor ?? .clear
         config.background.image = buttonItem.bgImage
-        config.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer { incoming in
-            var outgoing = incoming
-            outgoing.font = buttonItem.font
-            return outgoing
-        }
+//        config.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer { incoming in
+//            var outgoing = incoming
+//            outgoing.font = buttonItem.font
+//            return outgoing
+//        }
         self.configuration = config
     }
 }
