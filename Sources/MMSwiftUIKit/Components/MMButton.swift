@@ -19,8 +19,9 @@ import UIKit
         var bgColor: UIColor?
         var bgImage: UIImage?
         var state: UIControl.State
+        var contentInsets: NSDirectionalEdgeInsets?
         
-        public init(font: UIFont? = nil, title: String? = nil, titleColor: UIColor? = nil, image: UIImage? = nil, imagePosition: NSDirectionalRectEdge? = nil, spacing: CGFloat? = nil, bgColor: UIColor? = nil, bgImage: UIImage? = nil, state: UIControl.State) {
+        public init(font: UIFont? = nil, title: String? = nil, titleColor: UIColor? = nil, image: UIImage? = nil, imagePosition: NSDirectionalRectEdge? = nil, spacing: CGFloat? = nil, bgColor: UIColor? = nil, bgImage: UIImage? = nil, state: UIControl.State, contentInsets: NSDirectionalEdgeInsets?) {
             self.font = font
             self.title = title
             self.titleColor = titleColor
@@ -30,6 +31,7 @@ import UIKit
             self.bgColor = bgColor
             self.bgImage = bgImage
             self.state = state
+            self.contentInsets = contentInsets
         }
     }
     
@@ -84,7 +86,7 @@ import UIKit
             .font: buttonItem.font ?? .systemFont(ofSize: 16),
             .foregroundColor: buttonItem.titleColor ?? UIColor.white
         ]))
-        config.contentInsets = .zero
+        config.contentInsets = buttonItem.contentInsets ?? .zero
 //        config.title = buttonItem.title
 //        config.baseForegroundColor = buttonItem.titleColor
         config.image = buttonItem.image
