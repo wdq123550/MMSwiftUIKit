@@ -33,6 +33,24 @@ import UIKit
         }
     }
     
+    open override var isSelected: Bool {
+        didSet {
+            self.state = isSelected ? .selected : super.state
+        }
+    }
+    
+    open override var isEnabled: Bool {
+        didSet {
+            self.state = !isEnabled ? .disabled : super.state
+        }
+    }
+    
+    open override var isHighlighted: Bool {
+        didSet {
+            self.state = isHighlighted ? .highlighted : super.state
+        }
+    }
+    
     public override var state: UIControl.State {
         set { _state = newValue }
         get { self._state }
