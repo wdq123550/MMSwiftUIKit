@@ -9,7 +9,7 @@ import UIKit
 
 @MainActor open class MMButton: UIButton {
     
-    public struct ButtonItem {
+    public class ButtonItem {
         var font: UIFont?
         var title: String?
         var titleColor: UIColor?
@@ -61,6 +61,40 @@ import UIKit
     public func buttonItem(_ value: ButtonItem) -> Self {
         self.buttonItems.append(value)
         if value.state == self.state { self.applyButtonItem(buttonItem: value) }
+        return self
+    }
+    
+    public func updateButtonItem(_ value: ButtonItem) -> Self {
+        if let font = value.font {
+            self.buttonItems.filter { $0.state == value.state }.first?.font = font
+        }
+        if let title = value.title {
+            self.buttonItems.filter { $0.state == value.state }.first?.title = title
+        }
+        if let titleColor = value.titleColor {
+            self.buttonItems.filter { $0.state == value.state }.first?.titleColor = titleColor
+        }
+        if let image = value.image {
+            self.buttonItems.filter { $0.state == value.state }.first?.image = image
+        }
+        if let imagePosition = value.imagePosition {
+            self.buttonItems.filter { $0.state == value.state }.first?.imagePosition = imagePosition
+        }
+        if let spacing = value.spacing {
+            self.buttonItems.filter { $0.state == value.state }.first?.spacing = spacing
+        }
+        if let bgColor = value.bgColor {
+            self.buttonItems.filter { $0.state == value.state }.first?.bgColor = bgColor
+        }
+        if let bgImage = value.bgImage {
+            self.buttonItems.filter { $0.state == value.state }.first?.bgImage = bgImage
+        }
+        if let contentInsets = value.contentInsets {
+            self.buttonItems.filter { $0.state == value.state }.first?.contentInsets = contentInsets
+        }
+        if let buttonItem = self.buttonItems.filter({ $0.state == value.state }).first {
+            self.applyButtonItem(buttonItem: buttonItem)
+        }
         return self
     }
     
