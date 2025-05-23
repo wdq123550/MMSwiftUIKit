@@ -98,11 +98,6 @@ import UIKit
         return self
     }
     
-    public func isHighlighted(_ value: Bool) -> Self {
-        self.isHighlighted = value
-        return self
-    }
-    
     private var buttonItems = [ButtonItem]()
     private var _state: UIControl.State = .normal {
         didSet {
