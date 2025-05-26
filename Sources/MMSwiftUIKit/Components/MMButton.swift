@@ -13,6 +13,7 @@ import UIKit
         var font: UIFont?
         var title: String?
         var titleColor: UIColor?
+        var attributeText: NSAttributedString?
         var image: UIImage?
         var imagePosition: NSDirectionalRectEdge?
         var spacing: CGFloat?
@@ -21,10 +22,11 @@ import UIKit
         var state: UIControl.State
         var contentInsets: NSDirectionalEdgeInsets?
         
-        public init(font: UIFont? = nil, title: String? = nil, titleColor: UIColor? = nil, image: UIImage? = nil, imagePosition: NSDirectionalRectEdge? = nil, spacing: CGFloat? = nil, bgColor: UIColor? = nil, bgImage: UIImage? = nil, state: UIControl.State, contentInsets: NSDirectionalEdgeInsets? = nil) {
+        public init(font: UIFont? = nil, title: String? = nil, titleColor: UIColor? = nil, attributeText: NSAttributedString? = nil, image: UIImage? = nil, imagePosition: NSDirectionalRectEdge? = nil, spacing: CGFloat? = nil, bgColor: UIColor? = nil, bgImage: UIImage? = nil, state: UIControl.State, contentInsets: NSDirectionalEdgeInsets? = nil) {
             self.font = font
             self.title = title
             self.titleColor = titleColor
+            self.attributeText = attributeText
             self.image = image
             self.imagePosition = imagePosition
             self.spacing = spacing
@@ -92,6 +94,9 @@ import UIKit
         if let contentInsets = value.contentInsets {
             self.buttonItems.filter { $0.state == value.state }.first?.contentInsets = contentInsets
         }
+        if let attributeText = value.attributeText {
+            self.buttonItems.filter { $0.state == value.state }.first?.attributeText = attributeText
+        }
         if let buttonItem = self.buttonItems.filter({ $0.state == value.state }).first {
             self.applyButtonItem(buttonItem: buttonItem)
         }
@@ -111,10 +116,14 @@ import UIKit
     
     private func applyButtonItem(buttonItem: ButtonItem) {
         var config = UIButton.Configuration.plain()
-        config.attributedTitle = AttributedString.init(.init(string: buttonItem.title ?? "", attributes: [
-            .font: buttonItem.font ?? .systemFont(ofSize: 16),
-            .foregroundColor: buttonItem.titleColor ?? UIColor.white
-        ]))
+        if let attributeText = buttonItem.attributeText {
+            config.attributedTitle = .init(attributeText)
+        }else{
+            config.attributedTitle = AttributedString.init(.init(string: buttonItem.title ?? "", attributes: [
+                .font: buttonItem.font ?? .systemFont(ofSize: 16),
+                .foregroundColor: buttonItem.titleColor ?? UIColor.white
+            ]))
+        }
         config.contentInsets = buttonItem.contentInsets ?? .zero
 //        config.title = buttonItem.title
 //        config.baseForegroundColor = buttonItem.titleColor
