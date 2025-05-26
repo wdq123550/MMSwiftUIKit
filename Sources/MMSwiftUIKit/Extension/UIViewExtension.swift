@@ -9,6 +9,9 @@ import Foundation
 import UIKit
 import SnapKit
 
+/// SnapKit 约束闭包类型
+public typealias ConstraintsClosure = (_ make: ConstraintMaker) -> Void
+
 public extension UIView {
     
     @discardableResult func isUserInteractionEnabled(_ value: Bool) -> Self {
@@ -59,8 +62,12 @@ public extension UIView {
         return self
     }
     
-    @discardableResult func makeConstraints(_ closure: (_ make: ConstraintMaker) -> Void) -> Self{
-        self.snp.makeConstraints(closure)
+    @discardableResult func makeConstraints(_ closure: @escaping ConstraintsClosure) -> Self {
+        if self.superview == nil { //先把约束闭包存起来
+            self.constraintsClosure = closure
+        }else{
+            self.snp.makeConstraints(closure)
+        }
         return self
     }
     
@@ -126,6 +133,7 @@ public extension UIView {
     
     @discardableResult func superview(_ value: UIView) -> Self {
         value.addSubview(self)
+        self.applyConstraints()
         return self
     }
     
@@ -168,5 +176,37 @@ public extension UIView {
 
     private func removeGradientLayer() {
         self.layer.sublayers?.filter { $0 is CAGradientLayer }.forEach { $0.removeFromSuperlayer() }
+    }
+}
+
+
+extension UIView {
+    // 使用静态的 Void 指针作为键（安全且无警告）
+    private struct AssociatedKeys {
+        static var snapKitConstraintsKey: Void?
+    }
+    
+    /// 关联的 SnapKit 约束闭包
+    public var constraintsClosure: ConstraintsClosure? {
+        get {
+            // 从关联对象中获取闭包
+            return objc_getAssociatedObject(self, &AssociatedKeys.snapKitConstraintsKey) as? ConstraintsClosure
+        }
+        set {
+            // 将闭包存储到关联对象中（内存策略为 RETAIN_NONATOMIC）
+            objc_setAssociatedObject(
+                self,
+                &AssociatedKeys.snapKitConstraintsKey,
+                newValue,
+                .OBJC_ASSOCIATION_RETAIN_NONATOMIC
+            )
+        }
+    }
+    
+    /// 应用存储的 SnapKit 约束
+    public func applyConstraints() {
+        guard let closure = constraintsClosure else { return }
+        self.snp.remakeConstraints(closure)
+        self.constraintsClosure = nil
     }
 }
