@@ -51,13 +51,13 @@ public extension UIView {
     
     @discardableResult func overlay(_ content: viewClosure) -> UIView {
         let view = content()
-        self.addSubview(view)
+        view.superview(self)
         return self
     }
     
     @discardableResult func overlays(_ contents: viewsClosure) -> UIView {
         contents().forEach { view in
-            self.addSubview(view)
+            view.superview(self)
         }
         return self
     }
