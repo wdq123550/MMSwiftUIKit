@@ -11,4 +11,5 @@ import Combine
 
 @MainActor open class MMView: UIView {
     public var cancellabel = Set<AnyCancellable>()
+    public lazy var mm = { MMViewChain(view: self) }()
 }

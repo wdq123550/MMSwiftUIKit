@@ -37,6 +37,8 @@ import UIKit
         }
     }
     
+    public lazy var mm = { MMButtonChain(view: self) }()
+    
     open override var isSelected: Bool {
         didSet {
             self.state = isSelected ? .selected : super.state
@@ -125,18 +127,11 @@ import UIKit
             ]))
         }
         config.contentInsets = buttonItem.contentInsets ?? .zero
-//        config.title = buttonItem.title
-//        config.baseForegroundColor = buttonItem.titleColor
         config.image = buttonItem.image
         config.imagePlacement = buttonItem.imagePosition ?? .leading
         config.imagePadding = buttonItem.spacing ?? 0
         config.background.backgroundColor = buttonItem.bgColor ?? .clear
         config.background.image = buttonItem.bgImage
-//        config.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer { incoming in
-//            var outgoing = incoming
-//            outgoing.font = buttonItem.font
-//            return outgoing
-//        }
         self.configuration = config
     }
 }

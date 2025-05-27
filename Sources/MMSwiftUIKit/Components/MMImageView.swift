@@ -7,4 +7,6 @@
 
 import UIKit
 
-@MainActor open class MMImageView: UIImageView {}
+@MainActor open class MMImageView: UIImageView {
+    public lazy var mm = { MMImageViewChain(view: self) }()
+}

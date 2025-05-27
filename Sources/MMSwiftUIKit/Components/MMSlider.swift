@@ -7,4 +7,6 @@
 
 import UIKit
 
-@MainActor open class MMSlider: UISlider {}
+@MainActor open class MMSlider: UISlider {
+    public lazy var mm = { MMSliderChain(view: self) }()
+}

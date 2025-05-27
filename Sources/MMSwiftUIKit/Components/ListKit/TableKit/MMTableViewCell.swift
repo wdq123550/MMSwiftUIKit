@@ -20,6 +20,7 @@ open class MMTVCellVM: NSObject, MMTVCellVMProtocol{
 open class MMTVCell: UITableViewCell, MMTVCellProtocol {
     
     public var cancellabel = Set<AnyCancellable>()
+    public lazy var mm = { MMTableViewCellChain(view: self) }()
     
     public var _viewModel: MMTVCellVM?
     

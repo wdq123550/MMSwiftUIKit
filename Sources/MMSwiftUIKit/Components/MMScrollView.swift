@@ -7,4 +7,6 @@
 
 import UIKit
 
-@MainActor open class MMScrollView: UIScrollView {}
+@MainActor open class MMScrollView: UIScrollView {
+    public lazy var mm = { MMScrollViewChain(view: self) }()
+}

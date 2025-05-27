@@ -28,6 +28,8 @@ import MJRefresh
         fatalError("init(coder:) has not been implemented")
     }
     
+    public lazy var mm = { MMTableViewChain(view: self) }()
+    
     public func reload(with datas: [Any], animation: Bool = false) {
         
         if self.delegate == nil { self.delegate(self.proxy) }

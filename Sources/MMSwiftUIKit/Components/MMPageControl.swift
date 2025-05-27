@@ -8,5 +8,5 @@
 import UIKit
 
 open class MMPageControl: UIPageControl {
-
+    public lazy var mm = { MMPageControlChain(view: self) }()
 }

@@ -7,4 +7,6 @@
 
 import UIKit
 
-@MainActor open class MMLabel: UILabel {}
+@MainActor open class MMLabel: UILabel {
+    public lazy var mm = { MMLabelChain(view: self) }()
+}

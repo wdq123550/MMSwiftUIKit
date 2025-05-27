@@ -7,4 +7,6 @@
 
 import UIKit
 
-@MainActor open class MMTextField: UITextField {}
+@MainActor open class MMTextField: UITextField {
+    public lazy var mm = { MMTextFieldChain(view: self) }()
+}

@@ -7,4 +7,6 @@
 
 import UIKit
 
-@MainActor open class MMSwitch: UISwitch {}
+@MainActor open class MMSwitch: UISwitch {
+    public lazy var mm = { MMSwitchChain(view: self) }()
+}

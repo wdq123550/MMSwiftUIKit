@@ -10,6 +10,7 @@ import Combine
 
 @MainActor open class MMNavigationVC: UINavigationController {
     
+    public lazy var mm = { MMNavigationControllerChain(view: self) }()
     public var cancellabel = Set<AnyCancellable>()
     public var isEnableFullScreenPopGesture: Bool = true {
         didSet {

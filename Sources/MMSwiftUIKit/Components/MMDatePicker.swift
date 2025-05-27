@@ -7,4 +7,6 @@
 
 import UIKit
 
-@MainActor open class MMDatePicker: UIDatePicker {}
+@MainActor open class MMDatePicker: UIDatePicker {
+    public lazy var mm = { MMDatePickerChain(view: self) }()
+}

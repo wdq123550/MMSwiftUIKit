@@ -26,4 +26,6 @@ import Combine
     @MainActor required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    public lazy var mm = { MMTextViewChain(view: self) }()
 }

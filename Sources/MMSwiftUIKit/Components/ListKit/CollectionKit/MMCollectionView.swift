@@ -30,6 +30,7 @@ import MJRefresh
         fatalError("init(coder:) has not been implemented")
     }
     
+    public lazy var mm = { MMCollectionViewChain(view: self) }()
     
     public func reload(with datas: [Any], animation: Bool = false) {
         
