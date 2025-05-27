@@ -9,7 +9,7 @@ import UIKit
 
 public class MMResponderChain<T> where T: UIResponder {
     
-    public weak var view: T!
+    public let view: T
     
     public init(view: T) {
         self.view = view

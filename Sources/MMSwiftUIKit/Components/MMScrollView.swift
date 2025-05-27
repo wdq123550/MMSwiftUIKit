@@ -8,5 +8,5 @@
 import UIKit
 
 @MainActor open class MMScrollView: UIScrollView {
-    public lazy var mm = { MMScrollViewChain(view: self) }()
+    public var mm: MMScrollViewChain<MMScrollView> { MMScrollViewChain(view: self) }
 }

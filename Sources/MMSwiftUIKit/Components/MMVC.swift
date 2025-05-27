@@ -12,5 +12,5 @@ import Combine
     public var cancellabel = Set<AnyCancellable>()
     open var navigationBackImage: UIImage? { UIImage(systemName: "arrowshape.backward.fill") }
     @objc open func navigationBack(animated: Bool = true) { self.navigationController?.popViewController(animated: animated) }
-    public lazy var mm = { MMViewControllerChain(view: self) }()
+    public var mm: MMViewControllerChain<MMVC> { MMViewControllerChain(view: self) }
 }

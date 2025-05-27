@@ -8,5 +8,5 @@
 import UIKit
 
 @MainActor open class MMImageView: UIImageView {
-    public lazy var mm = { MMImageViewChain(view: self) }()
+    public var mm: MMImageViewChain<MMImageView> { MMImageViewChain(view: self) }
 }

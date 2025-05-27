@@ -9,5 +9,5 @@ import UIKit
 import WebKit
 
 open class MMWebView: WKWebView {
-    public lazy var mm = { MMWebViewChain(view: self) }()
+    public var mm: MMWebViewChain<MMWebView> { MMWebViewChain(view: self) }
 }

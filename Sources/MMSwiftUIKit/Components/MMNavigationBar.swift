@@ -8,5 +8,5 @@
 import UIKit
 
 class MMNavigationBar: UINavigationBar {
-    public lazy var mm = { MMNavigationBarChain(view: self) }()
+    public var mm: MMNavigationBarChain<MMNavigationBar> { MMNavigationBarChain(view: self) }
 }

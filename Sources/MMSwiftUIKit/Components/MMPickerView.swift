@@ -8,5 +8,5 @@
 import UIKit
 
 @MainActor open class MMPickerView: UIPickerView {
-    public lazy var mm = { MMPickerViewChain(view: self) }()
+    public var mm: MMPickerViewChain<MMPickerView> { MMPickerViewChain(view: self) }
 }

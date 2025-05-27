@@ -10,5 +10,5 @@ import Combine
 
 @MainActor open class MMTabBarVC: UITabBarController {
     public var cancellabel = Set<AnyCancellable>()
-    public lazy var mm = { MMTabBarControllerChain(view: self) }()
+    public var mm: MMTabBarControllerChain<MMTabBarVC> { MMTabBarControllerChain(view: self) }
 }

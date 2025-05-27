@@ -18,7 +18,7 @@ open class MMCVCellVM: NSObject, MMCVCellVMProtocol {
 open class MMCVCell: UICollectionViewCell, MMCVCellProtocol {
     
     public var cancellabel = Set<AnyCancellable>()
-    public lazy var mm = { MMCollectionViewCellChain(view: self) }()
+    public var mm: MMCollectionViewCellChain<MMCVCell> { MMCollectionViewCellChain(view: self) }
     
     public override init(frame: CGRect) {
         super.init(frame: frame)

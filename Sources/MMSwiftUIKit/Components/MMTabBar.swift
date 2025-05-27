@@ -8,5 +8,5 @@
 import UIKit
 
 class MMTabBar: UITabBar {
-    public lazy var mm = { MMTabBarChain(view: self) }()
+    public var mm: MMTabBarChain<MMTabBar> { MMTabBarChain(view: self) }
 }

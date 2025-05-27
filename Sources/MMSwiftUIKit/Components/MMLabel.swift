@@ -8,5 +8,5 @@
 import UIKit
 
 @MainActor open class MMLabel: UILabel {
-    public lazy var mm = { MMLabelChain(view: self) }()
+    public var mm: MMLabelChain<MMLabel> { MMLabelChain(view: self) }
 }

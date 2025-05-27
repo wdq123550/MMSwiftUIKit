@@ -28,7 +28,7 @@ import MJRefresh
         fatalError("init(coder:) has not been implemented")
     }
     
-    public lazy var mm = { MMTableViewChain(view: self) }()
+    public var mm: MMTableViewChain<MMTableView> { MMTableViewChain(view: self) }
     
     public func reload(with datas: [Any], animation: Bool = false) {
         

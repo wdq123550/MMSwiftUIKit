@@ -27,5 +27,5 @@ import Combine
         fatalError("init(coder:) has not been implemented")
     }
     
-    public lazy var mm = { MMTextViewChain(view: self) }()
+    public var mm: MMTextViewChain<MMTextView> { MMTextViewChain(view: self) }
 }

@@ -37,7 +37,7 @@ import UIKit
         }
     }
     
-    public lazy var mm = { MMButtonChain(view: self) }()
+    public var mm: MMButtonChain<MMButton> { MMButtonChain(view: self) }
     
     open override var isSelected: Bool {
         didSet {

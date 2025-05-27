@@ -8,5 +8,5 @@
 import UIKit
 
 @MainActor open class MMDatePicker: UIDatePicker {
-    public lazy var mm = { MMDatePickerChain(view: self) }()
+    public var mm: MMDatePickerChain<MMDatePicker> { MMDatePickerChain(view: self) }
 }
