@@ -299,9 +299,9 @@ public class MMResponderChain<T> where T: UIResponder {
         return self
     }
     
-    @available(iOS 18.2, *)
-    @discardableResult public func showWritingTools(_ sender: Any) -> Self {
-        self.view.showWritingTools(sender)
-        return self
-    }
+//    @available(iOS 18.2, *)
+//    @discardableResult public func showWritingTools(_ sender: Any) -> Self {
+//        self.view.showWritingTools(sender)
+//        return self
+//    }
 }
