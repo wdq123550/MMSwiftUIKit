@@ -14,7 +14,7 @@ open class MMCVCellVM: NSObject, MMCVCellVMProtocol {
     public var indexPath: IndexPath?
     public var cellSize: CGSize?
     public let clickSubject = PassthroughSubject<Void, Never>()
-    public var cancellables = Set<AnyCancellable>()
+    public var cancellable = Set<AnyCancellable>()
 }
 
 open class MMCVCell: UICollectionViewCell, MMCVCellProtocol {

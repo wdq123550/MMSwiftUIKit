@@ -14,7 +14,7 @@ open class MMTVCellVM: NSObject, MMTVCellVMProtocol{
     public var indexPath: IndexPath?
     open var cellType: MMTVCellProtocol.Type{ MMTVCell.self }
     public let clickSubject = PassthroughSubject<Void, Never>()
-    public var cancellables = Set<AnyCancellable>()
+    public var cancellable = Set<AnyCancellable>()
 }
 
 open class MMTVCell: UITableViewCell, MMTVCellProtocol {
