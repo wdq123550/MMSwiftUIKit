@@ -37,3 +37,32 @@ public enum MMGradientDirection {
     case topLeftToBottomRight     // 左上到右下
     case topRightToBottomLeft     // 右上到左下
 }
+
+
+public class ButtonItem {
+    var font: UIFont?
+    var title: String?
+    var titleColor: UIColor?
+    var attributeText: NSAttributedString?
+    var image: UIImage?
+    var imagePosition: NSDirectionalRectEdge?
+    var spacing: CGFloat?
+    var bgColor: UIColor?
+    var bgImage: UIImage?
+    var state: UIControl.State
+    var contentInsets: NSDirectionalEdgeInsets?
+    
+    public init(font: UIFont? = nil, title: String? = nil, titleColor: UIColor? = nil, attributeText: NSAttributedString? = nil, image: UIImage? = nil, imagePosition: NSDirectionalRectEdge? = nil, spacing: CGFloat? = nil, bgColor: UIColor? = nil, bgImage: UIImage? = nil, state: UIControl.State, contentInsets: NSDirectionalEdgeInsets? = nil) {
+        self.font = font
+        self.title = title
+        self.titleColor = titleColor
+        self.attributeText = attributeText
+        self.image = image
+        self.imagePosition = imagePosition
+        self.spacing = spacing
+        self.bgColor = bgColor
+        self.bgImage = bgImage
+        self.state = state
+        self.contentInsets = contentInsets
+    }
+}
