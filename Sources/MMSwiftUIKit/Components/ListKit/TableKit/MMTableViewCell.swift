@@ -13,7 +13,7 @@ open class MMTVCellVM: NSObject, MMTVCellVMProtocol{
     public var cellHeight: CGFloat?
     public var indexPath: IndexPath?
     open var cellType: MMTVCellProtocol.Type{ MMTVCell.self }
-    public let clickSubject = PassthroughSubject<Int, Never>()
+    public let clickSubject = PassthroughSubject<Void, Never>()
     public var cancellables = Set<AnyCancellable>()
 }
 
