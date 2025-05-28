@@ -7,7 +7,17 @@
 
 import UIKit
 
-public class MMButtonChain<T>: MMControlChain<T> where T: UIButton {
+public class MMButtonChain<T>: MMControlChain<T> where T: MMButton {
+    
+    @MainActor @discardableResult public func updateButtonItem(_ value: MMButton.ButtonItem) -> Self {
+        self.view.updateButtonItem(value)
+        return self
+    }
+    
+    @MainActor @discardableResult public func buttonItem(_ value: MMButton.ButtonItem) -> Self {
+        self.view.buttonItem(value)
+        return self
+    }
     
     @discardableResult public func setTitle(_ title: String?, for state: UIControl.State) -> Self {
         self.view.setTitle(title, for: state)

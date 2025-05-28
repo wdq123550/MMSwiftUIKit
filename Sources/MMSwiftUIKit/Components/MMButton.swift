@@ -62,13 +62,13 @@ import UIKit
         get { self._state }
     }
     
-    public func buttonItem(_ value: ButtonItem) -> Self {
+    @discardableResult public func buttonItem(_ value: ButtonItem) -> Self {
         self.buttonItems.append(value)
         if value.state == self.state { self.applyButtonItem(buttonItem: value) }
         return self
     }
     
-    public func updateButtonItem(_ value: ButtonItem) -> Self {
+    @discardableResult public func updateButtonItem(_ value: ButtonItem) -> Self {
         if let font = value.font {
             self.buttonItems.filter { $0.state == value.state }.first?.font = font
         }
