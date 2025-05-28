@@ -33,8 +33,8 @@ import MJRefresh
     
     public func reload(with datas: [Any], animation: Bool = false) {
         
-        if self.delegate == nil { self.delegate(self.proxy) }
-        if self.dataSource == nil { self.dataSource(self.proxy) }
+        if self.delegate == nil { self.mm.delegate(self.proxy) }
+        if self.dataSource == nil { self.mm.dataSource(self.proxy) }
         
         self.proxy.reload(datas: datas)
         
