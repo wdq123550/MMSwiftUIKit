@@ -21,7 +21,8 @@ import MJRefresh
             let reuseIdentifier = String(describing: cls)
             self.register(cls, forCellWithReuseIdentifier: reuseIdentifier)
         }
-        self.backgroundColor(.clear)
+        self.mm
+            .backgroundColor(.clear)
             .showsHorizontalScrollIndicator(false)
             .showsVerticalScrollIndicator(false)
     }

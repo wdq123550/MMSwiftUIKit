@@ -14,7 +14,8 @@ import MJRefresh
     public init(style: UITableView.Style, extensionTarget: AnyObject){
         self.proxy = MMTableProxy(extensionTarget: extensionTarget)
         super.init(frame: .zero, style: style)
-        self.estimatedRowHeight(0)
+        self.mm
+            .estimatedRowHeight(0)
             .estimatedSectionFooterHeight(0)
             .estimatedSectionHeaderHeight(0)
             .showsVerticalScrollIndicator(false)

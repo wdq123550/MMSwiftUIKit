@@ -26,7 +26,8 @@ open class MMTVCell: UITableViewCell, MMTVCellProtocol {
     
     public required init(reuserID: String) {
         super.init(style: .default, reuseIdentifier: reuserID)
-        self.selectionStyle(.none)
+        self.mm
+            .selectionStyle(.none)
             .backgroundColor(.clear)
         
         let tapGes = UITapGestureRecognizer()

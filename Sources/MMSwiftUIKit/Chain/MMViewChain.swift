@@ -535,8 +535,8 @@ public class MMViewChain<T>: MMResponderChain<T> where T: UIView {
     
     
     @discardableResult public func makeConstraints(superview: UIView, _ closure: (_ make: ConstraintMaker) -> Void) -> Self {
-        self.view.superview(superview)
-        self.view.snp.makeConstraints(closure)
+        superview.addSubview(self.view)
+        self.view.snp.remakeConstraints(closure)
         return self
     }
 }

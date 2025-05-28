@@ -22,7 +22,7 @@ open class MMCVCell: UICollectionViewCell, MMCVCellProtocol {
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor(.clear)
+        self.backgroundColor = .clear
         let tapGes = UITapGestureRecognizer()
         tapGes.publisher.sink { [unowned self] tapGes in
             self.onClickContentView()
