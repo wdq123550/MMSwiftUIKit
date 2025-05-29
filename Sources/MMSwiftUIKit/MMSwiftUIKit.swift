@@ -16,7 +16,7 @@ public struct LayerSet {
     public var shadowOffset: CGSize? //阴影偏移
     public var shadowOpacity: Float? //阴影透明度
     public var shadowRadius: CGFloat? //阴影圆角
-    public var shadowPath: CGPath? //引用路径
+    public var shadowPath: CGPath? //阴影路径
     public var maskedCorners: CACornerMask? //部分圆角
     public init(cornerRadius: CGFloat? = nil, borderWidth: CGFloat? = nil, borderColor: UIColor? = nil, shadowColor: UIColor? = nil, shadowOffset: CGSize? = nil, shadowOpacity: Float? = nil, shadowRadius: CGFloat? = nil, shadowPath: CGPath? = nil, maskedCorners: CACornerMask? = nil) {
         self.cornerRadius = cornerRadius
