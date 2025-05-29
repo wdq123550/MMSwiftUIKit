@@ -9,15 +9,15 @@ public typealias viewClosure = (() -> UIView)
 public typealias viewsClosure = (() -> [UIView])
 
 public struct LayerSet {
-    public var cornerRadius: CGFloat?
-    public var borderWidth: CGFloat?
-    public var borderColor: UIColor?
-    public var shadowColor: UIColor?
-    public var shadowOffset: CGSize?
-    public var shadowOpacity: Float?
-    public var shadowRadius: CGFloat?
-    public var shadowPath: CGPath?
-    public var maskedCorners: CACornerMask?
+    public var cornerRadius: CGFloat? //圆角
+    public var borderWidth: CGFloat? //边框宽度
+    public var borderColor: UIColor? //边框颜色
+    public var shadowColor: UIColor? //阴影颜色
+    public var shadowOffset: CGSize? //阴影偏移
+    public var shadowOpacity: Float? //阴影透明度
+    public var shadowRadius: CGFloat? //阴影圆角
+    public var shadowPath: CGPath? //引用路径
+    public var maskedCorners: CACornerMask? //部分圆角
     public init(cornerRadius: CGFloat? = nil, borderWidth: CGFloat? = nil, borderColor: UIColor? = nil, shadowColor: UIColor? = nil, shadowOffset: CGSize? = nil, shadowOpacity: Float? = nil, shadowRadius: CGFloat? = nil, shadowPath: CGPath? = nil, maskedCorners: CACornerMask? = nil) {
         self.cornerRadius = cornerRadius
         self.borderWidth = borderWidth
