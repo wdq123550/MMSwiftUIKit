@@ -15,16 +15,16 @@ import Combine
     public let valueDidChange: AnyPublisher<Void, Never> //_property.valueDidChange获取值改变的轻量事件(不获取值)
     public var wrappedValue: Value { didSet{didChangeSubject.send(wrappedValue)} }
     public init(wrappedValue: Value, emitCurrentValue: Bool = false) {
-      self.wrappedValue = wrappedValue
-      let didChangeSubject: any Subject<Value, Never>
-      if emitCurrentValue {
-        didChangeSubject = CurrentValueSubject(wrappedValue)
-      } else {
-        didChangeSubject = PassthroughSubject<Value, Never>()
-      }
-      self.didChangeSubject = didChangeSubject
-      self.projectedValue = didChangeSubject.eraseToAnyPublisher()
-      self.valueDidChange = didChangeSubject.voidPublisher()
+        self.wrappedValue = wrappedValue
+        let didChangeSubject: any Subject<Value, Never>
+        if emitCurrentValue {
+            didChangeSubject = CurrentValueSubject(wrappedValue)
+        } else {
+            didChangeSubject = PassthroughSubject<Value, Never>()
+        }
+        self.didChangeSubject = didChangeSubject
+        self.projectedValue = didChangeSubject.eraseToAnyPublisher()
+        self.valueDidChange = didChangeSubject.voidPublisher()
     }
 }
 

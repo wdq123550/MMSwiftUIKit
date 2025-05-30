@@ -15,6 +15,11 @@ public class MMTextViewChain<T>: MMScrollViewChain<T> where T: RSKGrowingTextVie
         return self
     }
     
+    @discardableResult public func attributedPlaceholder(_ value: NSAttributedString) -> Self {
+        self.view.attributedPlaceholder = value
+        return self
+    }
+    
     @discardableResult public func font(_ value: UIFont?) -> Self {
         self.view.font = value
         return self

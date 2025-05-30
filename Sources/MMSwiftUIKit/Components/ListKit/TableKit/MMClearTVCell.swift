@@ -33,6 +33,7 @@ public final class MMClearTVCell: MMTVCell {
         super.reset(with: cellVM, indexPath: indexPath)
         self.backgroundColor = self.viewModel.bgColor
     }
+    
     @discardableResult public override class func cellHeight(with cellVM: MMTVCellVMProtocol, indexPath: IndexPath) -> CGFloat {
         super.cellHeight(with: cellVM, indexPath: indexPath)
         return cellVM.cellHeight ?? 0
