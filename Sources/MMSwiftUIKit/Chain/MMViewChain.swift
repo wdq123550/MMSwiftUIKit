@@ -539,6 +539,12 @@ public class MMViewChain<T>: MMResponderChain<T> where T: UIView {
         self.view.snp.remakeConstraints(closure)
         return self
     }
+    
+    
+    @discardableResult func isShow(_ value: Bool) -> Self {
+        self.view.isHidden = !value
+        return self
+    }
 }
 
 extension UIView {

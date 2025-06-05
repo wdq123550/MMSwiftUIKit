@@ -174,6 +174,11 @@ public extension UIView {
     private func removeGradientLayer() {
         self.layer.sublayers?.filter { $0 is CAGradientLayer }.forEach { $0.removeFromSuperlayer() }
     }
+    
+    @discardableResult func isShow(_ value: Bool) -> Self {
+        self.isHidden = !value
+        return self
+    }
 }
 
 
