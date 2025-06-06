@@ -30,8 +30,8 @@ import Combine
     
     
     open override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+        if self.children.count > 0 { viewController.hidesBottomBarWhenPushed = true } //隐藏tabBar
         super.pushViewController(viewController, animated: animated)
-        if self.children.count > 1 { viewController.hidesBottomBarWhenPushed = true } //隐藏tabBar
         if let vc = viewController as? MMVC, self.children.count > 1 {
             viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(image: vc.navigationBackImage, style: .plain, target: vc, action: #selector(vc.navigationBack)) //设置被push的那个vc导航栏返回按钮
         }
