@@ -12,7 +12,7 @@ import Combine
     public var cancellabel = Set<AnyCancellable>()
     open var navigationBackImage: UIImage? { UIImage(systemName: "arrowshape.backward.fill") }
     open var navigationBarHidden: Bool { true }
-    @objc open func navigationBack(animated: Bool = true) { self.navigationController?.popViewController(animated: animated) }
+    @objc open func navigationBack() { self.navigationController?.popViewController(animated: true) }
     public var mm: MMViewControllerChain<MMVC> { MMViewControllerChain(view: self) }
     open override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(self.navigationBarHidden, animated: true)

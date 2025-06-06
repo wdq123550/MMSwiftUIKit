@@ -33,7 +33,7 @@ import Combine
         super.pushViewController(viewController, animated: animated)
         if self.children.count > 1 { viewController.hidesBottomBarWhenPushed = true } //隐藏tabBar
         if let vc = viewController as? MMVC, self.children.count > 1 {
-            viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(image: vc.navigationBackImage, style: .plain, target: vc, action: #selector(vc.navigationBack(animated:))) //设置被push的那个vc导航栏返回按钮
+            viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(image: vc.navigationBackImage, style: .plain, target: vc, action: #selector(vc.navigationBack)) //设置被push的那个vc导航栏返回按钮
         }
     }
     
