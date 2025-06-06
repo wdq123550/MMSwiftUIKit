@@ -10,6 +10,8 @@ import Combine
 
 @MainActor open class MMNavigationVC: UINavigationController {
     
+    open override var childForStatusBarStyle: UIViewController?{ self.topViewController }
+    open override var childForStatusBarHidden: UIViewController? { self.topViewController }
     public var mm: MMNavigationControllerChain<MMNavigationVC> { MMNavigationControllerChain(view: self) }
     public var cancellabel = Set<AnyCancellable>()
     public var isEnableFullScreenPopGesture: Bool = true {

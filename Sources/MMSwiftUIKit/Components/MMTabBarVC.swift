@@ -9,6 +9,8 @@ import UIKit
 import Combine
 
 @MainActor open class MMTabBarVC: UITabBarController {
+    open override var childForStatusBarStyle: UIViewController?{ self.selectedViewController }
+    open override var childForStatusBarHidden: UIViewController? { self.selectedViewController }
     public var cancellabel = Set<AnyCancellable>()
     public var mm: MMTabBarControllerChain<MMTabBarVC> { MMTabBarControllerChain(view: self) }
 }
