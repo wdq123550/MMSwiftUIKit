@@ -7,6 +7,6 @@
 
 import UIKit
 
-class MMNavigationBar: UINavigationBar {
+open class MMNavigationBar: UINavigationBar {
     public var mm: MMNavigationBarChain<MMNavigationBar> { MMNavigationBarChain(view: self) }
 }

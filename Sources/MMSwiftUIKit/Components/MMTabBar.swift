@@ -7,6 +7,6 @@
 
 import UIKit
 
-class MMTabBar: UITabBar {
+open class MMTabBar: UITabBar {
     public var mm: MMTabBarChain<MMTabBar> { MMTabBarChain(view: self) }
 }
