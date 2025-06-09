@@ -1,6 +1,6 @@
 1.对于UIKit本身的组件，可以这样使用
 ![image](https://github.com/user-attachments/assets/6ef7c0c0-b6ed-4cd7-ab77-4619747b92f7)
-对于继承自MMView的组件，或者直接用MMView的组件，不仅能获得属性上链式写法，还能使用方法的链式写法：
+对于继承自MMView的组件，或者直接用MMView的组件，不仅能获得属性的链式写法，还能使用方法的链式写法：
 ![image](https://github.com/user-attachments/assets/a093a951-c085-4e37-b2b9-14f1a0a01336)
 使用.mm命名空间时，键入.view结尾能返回设置的控件.
 对于非继承自MMView组件的其他组件，没有.mm命名空间
