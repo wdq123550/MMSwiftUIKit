@@ -21,10 +21,10 @@ import UIKit
         var spacing: CGFloat?
         var bgColor: UIColor?
         var bgImage: UIImage?
-        var state: UIControl.State
         var contentInsets: NSDirectionalEdgeInsets?
+        var state: UIControl.State
         
-        public init(font: UIFont? = nil, title: String? = nil, titleColor: UIColor? = nil, attributeText: NSAttributedString? = nil, image: UIImage? = nil, imagePosition: NSDirectionalRectEdge? = nil, spacing: CGFloat? = nil, bgColor: UIColor? = nil, bgImage: UIImage? = nil, state: UIControl.State, contentInsets: NSDirectionalEdgeInsets? = nil) {
+        public init(font: UIFont? = nil, title: String? = nil, titleColor: UIColor? = nil, attributeText: NSAttributedString? = nil, image: UIImage? = nil, imagePosition: NSDirectionalRectEdge? = nil, spacing: CGFloat? = nil, bgColor: UIColor? = nil, bgImage: UIImage? = nil, contentInsets: NSDirectionalEdgeInsets? = nil, state: UIControl.State) {
             self.font = font
             self.title = title
             self.titleColor = titleColor
@@ -34,8 +34,8 @@ import UIKit
             self.spacing = spacing
             self.bgColor = bgColor
             self.bgImage = bgImage
-            self.state = state
             self.contentInsets = contentInsets
+            self.state = state
         }
     }
     
