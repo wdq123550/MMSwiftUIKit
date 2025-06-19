@@ -14,16 +14,11 @@ import Combine
     open override var childForStatusBarHidden: UIViewController? { self.topViewController }
     public var mm: MMNavigationControllerChain<MMNavigationVC> { MMNavigationControllerChain(view: self) }
     public var cancellabel = Set<AnyCancellable>()
-    public var isEnableFullScreenPopGesture: Bool = true {
-        didSet {
-            self.fullScreenPopGesture.isEnabled = isEnableFullScreenPopGesture
-            self.interactivePopGestureRecognizer?.isEnabled = !isEnableFullScreenPopGesture
-        }
-    }
     
     public init(rootViewController: UIViewController, isEnableFullScreenPopGesture: Bool) {
         super.init(rootViewController: rootViewController)
-        self.isEnableFullScreenPopGesture = isEnableFullScreenPopGesture
+        self.fullScreenPopGesture.isEnabled = isEnableFullScreenPopGesture
+        self.interactivePopGestureRecognizer?.isEnabled = !isEnableFullScreenPopGesture
     }
     
     required public init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
